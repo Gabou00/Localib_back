@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Rent } from 'src/rent/entities/rent.entity';
 
 @Entity()
 export class Car {
@@ -25,5 +26,7 @@ export class Car {
 
   @Column()
   type_vehicule: string;
-  rent: any;
+
+  @OneToMany(() => Rent, (rent) => rent.car)
+  rent: Rent[];
 }

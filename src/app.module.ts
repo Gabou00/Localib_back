@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CarModule } from './car/car.module';
-import { RentModule } from './rent/rent.module';
-import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Car } from './car/entities/car.entity';
+import { Rent } from './rent/entities/rent.entity';
+import { User } from './users/entities/user.entity';
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'root',
       database: 'localib',
-      entities: [CarModule, RentModule, UsersModule],
+      entities: [Car, Rent, User],
       synchronize: true,
     }),
   ],
