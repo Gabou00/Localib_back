@@ -30,3 +30,13 @@ export class Car {
   @OneToMany(() => Rent, (rent) => rent.car)
   rent: Rent[];
 }
+
+// {
+//   "marque": "Lexus",
+//   "modele": "LF-30",
+//   "immatriculation": "25-CV-56",
+//   "etat_du_vehicule": "A",
+//   "price": 80,
+//   "disponibilite": true,
+//   "type_vehicule": "voiture"
+// }
